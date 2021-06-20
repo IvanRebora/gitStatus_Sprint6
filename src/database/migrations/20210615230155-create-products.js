@@ -29,6 +29,27 @@ module.exports = {
       stock_max: {
         type: Sequelize.INTEGER
       },
+      manufacturers_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'manufacturers',
+          key: 'id'
+        }
+      },
+      images_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'images',
+          key: 'id'
+        }
+      },
+      categories_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'categories',
+          key: 'id'
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

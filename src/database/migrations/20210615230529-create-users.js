@@ -17,6 +17,13 @@ module.exports = {
       adress: {
         type: Sequelize.STRING
       },
+      adresses_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'adresses',
+          key: 'id'
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -25,7 +25,9 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.TEXT,
     stock: DataTypes.INTEGER,
     stock_min: DataTypes.INTEGER,
-    stock_max: DataTypes.INTEGER
+    stock_max: DataTypes.INTEGER,
+    categories_id: DataTypes.INTEGER,
+    manufacturers_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'products',

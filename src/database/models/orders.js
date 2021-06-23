@@ -12,18 +12,22 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       orders.belongsTo(models.users);
       orders.hasMany(models.orderdetails, {
-        as: "orderdetails",
+        as: "orderDetails",
         foreignKey: "orders_id"
     });
       orders.belongsTo(models.shippings);
-      orders.belongsTo(models.state);
+      orders.belongsTo(models.states);
       orders.belongsTo(models.payments);
       }
   };
   orders.init({
     number: DataTypes.INTEGER,
     date: DataTypes.DATE,
-    total: DataTypes.DECIMAL
+    total: DataTypes.DECIMAL,
+    shippings_id: DataTypes.INTEGER,
+    states_id: DataTypes.INTEGER,
+    payments_id: DataTypes.INTEGER,
+    users_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'orders',

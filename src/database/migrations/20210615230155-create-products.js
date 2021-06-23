@@ -36,13 +36,6 @@ module.exports = {
           key: 'id'
         }
       },
-      images_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'images',
-          key: 'id'
-        }
-      },
       categories_id: {
         type: Sequelize.INTEGER,
         references: {
